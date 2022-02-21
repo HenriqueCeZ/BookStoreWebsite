@@ -1,21 +1,28 @@
 package com.bookstore.entity;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.Entity;	//JPA specification
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
-public class Users {
+
+@Entity //specifying that this class is mapped to the table in the DB
+
+
+public class Users { //User is reserved word in my SQL
+
 	private Integer userId;
 	private String email;
 	private String fullName;
 	private String password;
 
+	//these fields are mapped to the columns table in DB
+	
+	
 	@Column(name = "user_id")
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id	//primary key
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	public Integer getUserId() {
 		return userId;
 	}
@@ -31,7 +38,6 @@ public class Users {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 	@Column(name = "full_name")
 	public String getFullName() {
 		return fullName;
@@ -48,5 +54,7 @@ public class Users {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	
 
 }
