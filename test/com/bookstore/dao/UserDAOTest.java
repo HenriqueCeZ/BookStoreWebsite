@@ -1,10 +1,16 @@
 package com.bookstore.dao;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
 
@@ -67,6 +73,71 @@ public class UserDAOTest {
 		String actual = user.getPassword();
 		assertEquals(expected, actual);
 	}
+	@Test
+	public void testGetUsersFound() {
+		Integer userId=19;
+		Users user=userDAO.get(userId);
+		if(user!=null) {
+		System.out.println(user.getEmail());
+		}
+		assertNotNull(user);
+		
+	}
+	
+	@Test
+	public void testGetUsersNotFound() {
+		Integer userId=99;
+		Users user=userDAO.get(userId);
+		assertNull(user);
+		
+	}
+	
+	@Test
+	public void testDeleteUsers() {
+		Integer userId=20;
+		userDAO.delete(userId);
+		Users user=userDAO.get(userId);
+		assertNull(user);
+	}
+	
+	
+	@Test(expected = EntityNotFoundException.class)
+	public void testDeleteNonExistUsers() {
+		Integer userId=55;
+		userDAO.delete(userId);
+		
+		
+	}
+	
+	@Test
+	public void testDeleteNonExistUserswithoutexception() {
+		Integer userId=55;
+		userDAO.delete(userId);
+		
+		//we see the error bc not exsite the user
+	}
+	
+	@Test
+	public void testListAll() {
+		List<Users> listUsers=userDAO.listAll();
+		for(Users user:listUsers) {
+			System.out.println(user.getEmail());
+		}
+		assertTrue(listUsers.size()>0);
+	} 
+	
+	@Test
+	public void testCount() {
+		long totalUsers=userDAO.count();
+		//WE HAVE 3 USERS IN DATABASE TABLE USER
+		assertEquals(3, totalUsers);;
+		
+		
+	}
+	
+	
+	
+	
 
 	@AfterClass
 	public static void tearDownClass() {
