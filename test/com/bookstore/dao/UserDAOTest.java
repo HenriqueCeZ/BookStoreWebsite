@@ -1,5 +1,6 @@
 package com.bookstore.dao;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import javax.persistence.EntityManager;
@@ -60,6 +61,11 @@ public class UserDAOTest {
 		user.setEmail("nam@codejava.net");
 		user.setFullName("Não tem como");
 		user.setPassword("NTC");
+		
+		user = userDAO.update(user);
+		String expected = "NTC";
+		String actual = user.getPassword();
+		assertEquals(expected, actual);
 	}
 
 	@AfterClass

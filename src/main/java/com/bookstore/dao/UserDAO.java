@@ -10,7 +10,7 @@ public class UserDAO extends JpaDAO<Users> implements GenericDAO<Users> {
 
 	public UserDAO(EntityManager entityManager) {
 		super(entityManager);
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	public Users create(Users user) {
@@ -18,9 +18,9 @@ public class UserDAO extends JpaDAO<Users> implements GenericDAO<Users> {
 	}
 	
 	@Override
-	public Users update(Users t) {
-		// TODO Auto-generated method stub
-		return null;
+	public Users update(Users user) {
+		
+		return super.update(user);
 	}
 
 	@Override
