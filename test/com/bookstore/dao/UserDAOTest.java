@@ -114,7 +114,7 @@ public class UserDAOTest {
 		Integer userId=55;
 		userDAO.delete(userId);
 		
-		//we see the error bc not exsite the user
+		
 	}
 	
 	@Test
