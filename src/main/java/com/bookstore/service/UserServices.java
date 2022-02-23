@@ -24,13 +24,14 @@ public class UserServices {
 		entityManager = entityManagerFactory.createEntityManager();
 		userDAO = new UserDAO(entityManager);
 		
+		
 	}
 
 
 
 	public List<Users> listUser() {
 			List<Users> listUsers = userDAO.listAll();
-		return listUsers;	
+			return listUsers;
 	}
 	
 }

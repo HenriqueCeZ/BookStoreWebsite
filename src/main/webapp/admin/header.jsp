@@ -4,14 +4,14 @@
 <img src="../images/BookstoreAdminLogo.png" />
 </div>
 <div>
-Welcome, <c:out value="${sessionScope.useremail}"/> | <a href="logout">Logout</a>
+Welcome, | <a href="logout">Logout</a>
 <br/>
 <br/>
 </div>
 <div id="headermenu" >
 
 <div >
-<a href="list_users">
+<a href="/BookStoreWebsite/admin/list_users">
 <img  src="../images/users.png" /> <br/>Users
 </a>
 </div>
