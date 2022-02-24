@@ -31,8 +31,7 @@ public class UserServices {
 
 	}
 
-	public void listUser()
-			throws ServletException, IOException {
+	public void listUser() throws ServletException, IOException {
 
 		listUser(null);
 
@@ -53,18 +52,29 @@ public class UserServices {
 
 	}
 
-	public void createUser() {
+	public void createUser() throws ServletException, IOException {
 
 		String email = request.getParameter("email");
 		String fullname = request.getParameter("fullname");
 		String password = request.getParameter("password");
+		Users existUser = userDAO.findByEmail(email);
+
+		if (existUser != null) {
+			String message = "Could not create user. A user witch email" + email + "already exists";
+			request.setAttribute("message", message);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("message.jsp");
+			dispatcher.forward(request, response);
+		} else {
+			Users newUser = new Users(email, fullname, password);
+
+			userDAO.create(newUser);
+			listUser("New user created successfully");
+		}
 
 		// response.getWriter().println("Email: " + email );
 		// response.getWriter().println("Fullname: " + fullname );
 		// response.getWriter().println("password: " + password );
-		Users newUser = new Users(email, fullname, password);
 
-		userDAO.create(newUser);
 	}
 
 }
