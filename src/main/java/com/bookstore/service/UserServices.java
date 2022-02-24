@@ -29,12 +29,14 @@ public class UserServices {
 
 	}
 
-	public void listUser(HttpServletRequest request, HttpServletResponse response)
+	public void listUser(HttpServletRequest request, HttpServletResponse response, String message)
 			throws ServletException, IOException {
 		List<Users> listUsers = userDAO.listAll();
 
 		request.setAttribute("listUsers", listUsers);
-		request.setAttribute("message", "New user created seccessfully");
+		if (message != null) {
+			request.setAttribute("message", message);
+		}
 
 		String listPage = "user_list.jsp";
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(listPage);

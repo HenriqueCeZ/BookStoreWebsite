@@ -13,16 +13,18 @@
 <body>
 
 	<jsp:directive.include file="header.jsp" />
-	
-	
+
+
 	<div align="center">
 		<h2>Users Managment</h2>
 		<a href="user_form.jsp">Create new User</a>
 	</div>
 	<c:if test="${ message != null}">
-	<div>
-		<h4 align="center" style="color: green;"><i>${message}</i></h4>
-	</div>
+		<div>
+			<h4 align="center" style="color: green;">
+				<i>${message}</i>
+			</h4>
+		</div>
 	</c:if>
 	<br>
 	<div align="center">

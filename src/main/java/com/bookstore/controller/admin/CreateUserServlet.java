@@ -10,19 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.bookstore.service.UserServices;
 
-
 @WebServlet("/admin/create_user")
 public class CreateUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
-		
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		UserServices userServices = new UserServices();
 		userServices.createUser(request, response);
-		userServices.listUser(request, response);
+		userServices.listUser(request, response, "New user created successfully");
 	}
 
 }

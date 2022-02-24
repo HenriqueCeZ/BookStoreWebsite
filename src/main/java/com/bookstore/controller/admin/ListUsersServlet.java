@@ -22,7 +22,7 @@ public class ListUsersServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		UserServices userServices = new UserServices();
-		userServices.listUser(request, response);
+		userServices.listUser(request, response, null);
 
 	}
 }
