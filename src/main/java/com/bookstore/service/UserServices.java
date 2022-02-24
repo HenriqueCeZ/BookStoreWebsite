@@ -34,4 +34,9 @@ public class UserServices {
 			return listUsers;
 	}
 	
+	public void createUser(String email, String fullName, String password) {
+		Users newUser = new Users(email, fullName, password);
+		userDAO.create(newUser);
+	}
+	
 }

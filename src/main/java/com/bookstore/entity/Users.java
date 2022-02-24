@@ -57,6 +57,17 @@ public class Users { //User is reserved word in my SQL
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public Users() {
+		
+	}
+
+	public Users(String email, String fullName, String password) {
+		super();
+		this.email = email;
+		this.fullName = fullName;
+		this.password = password;
+	}
 
 	
 
