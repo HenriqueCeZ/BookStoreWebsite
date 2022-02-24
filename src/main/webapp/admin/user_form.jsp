@@ -19,11 +19,42 @@
 		<h3> New User</h3>
 	</div>
 	
-	<div align="center"></div>
+	<div align="center">
+			<form action="create_uner" method="post">
+			<table>
+				<tr>
+					<td align="right">Email:</td>
+					<td align="left"><input type="text" name="email" size="20"></td>
+				
+				</tr>
+					<tr>
+					<td align="right">Full name:</td>
+					<td align="left"><input type="text" name="fullname" size="20"></td>
+				
+				</tr>
+				
+					<tr>
+					<td align="right">Password:</td>
+					<td align="left"><input type="text" name="password" size="20"></td>
+				
+				</tr>
+				<tr> <td>&nbsp;</td> </tr>
+				<tr>
+				 
+					<td colspan="2" align="center">
+					<input type="submit" value="Save">
+					<input type="button" value="Cancel">
+					</td>
+					
+				
+				</tr>
+			
+			</table>
+		</form>
+		
+	</div>
 
-	<div align="center"></div>
 
-	<div align="center"></div>
 
 	<jsp:directive.include file="footer.jsp" />
 

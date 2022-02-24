@@ -16,7 +16,7 @@
 
 	<div align="center">
 		<h2>Users Managment</h2>
-		<a href="">Create new User</a>
+		<a href="user_form.jsp">Create new User</a>
 	</div>
 	<br>
 	<div align="center">
@@ -33,8 +33,8 @@
 				<tr>
 					<td>${status.index + 1}</td>
 					<td>${user.userId}</td>
-					<td>${user.email}</td>
 					<td>${user.fullName}</td>
+					<td>${user.email}</td>
 
 					<td><a href="">Edit</a> &nbsp; <a href="">Delete</a></td>
 
