@@ -10,6 +10,7 @@ import javax.persistence.NamedQuery;
 
 @Entity // specifying that this class is mapped to the table in the DB
 @NamedQueries({ @NamedQuery(name = "User.findAll", query = "SELECT u FROM Users u ORDER by u.fullName"),
+		@NamedQuery(name = "Users.findByEmail", query = "SELECT u FROM Users u WHERE u.email = :email"),
 		@NamedQuery(name = "User.countAll", query = "SELECT Count(*) FROM Users u") })
 public class Users { // User is reserved word in my SQL
 

@@ -48,8 +48,8 @@
 				<tr>
 
 					<td colspan="2" align="center"><input type="submit"
-						value="Save"> <input type="button" value="Cancel" onclick="javascript:history.go(-1);">
-					</td>
+						value="Save"> <input type="button" value="Cancel"
+						onclick="javascript:history.go(-1);"></td>
 
 
 				</tr>
@@ -67,25 +67,30 @@
 
 <script type="text/javascript">
 	function validateFormInput() {
-		var fielEmail = document.getElementById("email");
-		var fielFullName = document.getElementById("fullname");
-		var fielPassword = document.getElementById("password");
-
+		var fieldEmail = document.getElementById("email");
+		var fieldFullname = document.getElementById("fullname");
+		var fieldPassword = document.getElementById("password");
 		if (fieldEmail.value.length == 0) {
-			alert("Email is required!");
+			alert("Email is requierd!");
 			fieldEmail.focus();
 			return false;
+
 		}
-		if (fieldFullName.value.length == 0) {
-			alert("Name is required!");
-			fieldFullName.focus();
+		if (fieldFullname.value.length == 0) {
+			alert("full name is requierd!");
+			fieldFullname.focus();
 			return false;
+
 		}
+
 		if (fieldPassword.value.length == 0) {
-			alert("Password is required!");
+			alert("password is requierd!");
 			fieldPassword.focus();
 			return false;
+
 		}
+		return true;
+
 	}
 </script>
 
