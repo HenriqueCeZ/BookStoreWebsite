@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Everygreen Books - Online Books Store </title>
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
@@ -12,10 +13,10 @@
 
 <div align="center">
 <br/><br/>
-<h3>This is main content:</h3>
-<h2>New Books</h2>
-<h2>Best-Selling Books:</h2>
-<h2>Most-favoured Books:</h2>
+<h3>Conteúdo principal:</h3>
+<h2>Novos livros</h2>
+<h2>Livros mais vendidos:</h2>
+<h2>Livros mais favoritos:</h2>
 <br/><br/>
 
 </div>

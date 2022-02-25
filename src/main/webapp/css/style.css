@@ -1,5 +1,19 @@
 @charset "UTF-8";
 
+
+*{
+    margin: 0;  
+    padding: 0;
+    font-family: 'Poppins' , sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    
+}
+body{
+    min-height:100vh;
+     overflow-x: hidden;
+}
+
 #headermenu {
 	display:table;
 	
@@ -88,4 +102,15 @@ input {
 	color: red;
 	font-style:italic;
 	margin:5px;
+}
+
+.footer{
+	position: absolute;
+	bottom: 0;
+	background-color: red;
+	color: red;
+}
+
+.test-form{
+	margin: 40px;
 }
