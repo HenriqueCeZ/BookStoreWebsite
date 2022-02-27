@@ -142,7 +142,7 @@ public class UserServices {
 		
 		String message = "Usuário deletado com sucesso";
 		if (userId == 1) {
-			message = "The default admin user account cannot be deleted.";
+			message = "A conta de usuário administrador padrão não pode ser excluída.";
 
 			request.setAttribute("message", message);
 			request.getRequestDispatcher("message.jsp").forward(request, response);
@@ -152,7 +152,7 @@ public class UserServices {
 		Users user=userDAO.get(userId);
 		
 		if (user == null) {
-			message = "Could not find user with ID " + userId + ", or it might have been deleted by another admin";
+			message = "Não foi possível encontrar o usuário com ID" + userId + ", ou pode ter sido excluído por outro administrador";
 
 			request.setAttribute("message", message);
 			request.getRequestDispatcher("message.jsp").forward(request, response);
